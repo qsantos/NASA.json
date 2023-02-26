@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" /><!-- prevent favicon.ico noise -->
+  <link rel="stylesheet" href="/css/font-awesome.min.css" />
+  <!--<link rel="stylesheet" href="/css/dataTables.fontAwesome.css" />-->
+  <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/responsive.bootstrap.min.css" />
+
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <title>Approximate Positions of the Planets</title>
+</head>
+
+  <body>
+<a class="sr-only sr-only-focusable" href="#main_content">Skip Navigation</a>
+
+
+
+
+<div id="banner" class="top-banner">
+  <img class="img-responsive banner" src="/images/ssd_banner.png" alt="banner" />
+  <img class="img-responsive banner-small" src="/images/ssd_banner_small.png" alt="banner" />
+  <img src="/images/logo_nasa_trio.png" alt="Trio-Logo" class="overlay-trilogo" />
+  <a id="link_nasa" class="hide-ext-link" href="https://www.nasa.gov/" title="NASA"
+    ><span class="sr-only">NASA</span></a>
+  <a id="link_jpl" class="hide-ext-link" href="https://www.jpl.nasa.gov/" title="JPL"
+    ><span class="sr-only">JPL</span></a>
+  <a id="link_caltech" class="hide-ext-link" href="https://www.caltech.edu/" title="Caltech"
+    ><span class="sr-only">Caltech</span></a>
+  <img src="/images/ssd_title_overlay.png" alt="SSD Solar System Dynamics" class="overlay-ssd-title" />
+</div>
+
+<!-- Beginning of navigation bar -->
+
+
+<div id="topnav">
+
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <span class="home-menu">Home</span>
+        
+        <img class="home-menu-mobile" src="/images/ssd_title_overlay.png" alt="SSD Solar System Dynamics Home" />
+      </a>
+    </div>
+
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+      
+      <!--DEBUG: join=About<br/>  rec=About-->
+        
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle"
+          data-toggle="dropdown">About<br/>&nbsp;<span class="caret"></span></a>
+          
+          <ul class="dropdown-menu dropdown-menu-left">
+          
+          
+            
+            <li><a href="/about/" class="">What does SSD do?</a></li>
+            
+          
+            
+            <li><a href="/faq.html" class="">FAQ</a></li>
+            
+          
+            
+            <li><a href="/sitemap.html" class="">Sitemap</a></li>
+            
+          
+            
+            <li><a href="/contact/" class="">Contact Us</a></li>
+            
+          
+          </ul>
+        </li>
+        
+      
+      <!--DEBUG: join=Orbits &amp;<br/>Ephemerides  rec=Orbits &amp;Ephemerides-->
+        
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle"
+          data-toggle="dropdown">Orbits &amp;<br/>Ephemerides&nbsp;<span class="caret"></span></a>
+          
+          <ul class="dropdown-menu dropdown-menu-left">
+          
+          
+            
+            <li><a href="/orbits.html" class="landing-page-item">Introduction</a></li>
+            
+          
+            
+          
+            
+            <li><a href="/horizons/" class="">Horizons System</a></li>
+            
+          
+            
+            <li><a href="/planets/orbits.html" class="">Planets</a></li>
+            
+          
+            
+            <li><a href="/sats/orbits.html" class="">Planetary Satellites</a></li>
+            
+          
+            
+            <li><a href="/sb/orbits.html" class="">Small Bodies</a></li>
+            
+          
+            
+            <li><a href="/tools/orbit_viewer.html" class="">Orbit Viewer</a></li>
+            
+          
+            
+            <li><a href="/ephem.html" class="">Download Ephemerides</a></li>
+            
+          
+          </ul>
+        </li>
+        
+      
+      <!--DEBUG: join=Planets<br/>  rec=Planets-->
+        
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle"
+          data-toggle="dropdown">Planets<br/>&nbsp;<span class="caret"></span></a>
+          
+          <ul class="dropdown-menu dropdown-menu-left">
+          
+          
+            
+            <li><a href="/planets/" class="landing-page-item">Introduction</a></li>
+            
+          
+            
+            <li><a href="/planets/orbits.html" class="">Orbits &amp; Ephemerides</a></li>
+            
+          
+            
+            <li><a href="/planets/phys_par.html" class="">Physical Parameters</a></li>
+            
+          
+            
+            <li><a href="/tools/gravity.html" class="">Gravity Fields</a></li>
+            
+          
+            
+            <li><a href="/planets/obs_data.html" class="">Observational Data</a></li>
+            
+          
+            
+            <li><a href="/planets/discovery.html" class="">Discovery Circumstances</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        </li>
+        
+      
+      <!--DEBUG: join=Planetary<br/>Satellites  rec=PlanetarySatellites-->
+        
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle"
+          data-toggle="dropdown">Planetary<br/>Satellites&nbsp;<span class="caret"></span></a>
+          
+          <ul class="dropdown-menu dropdown-menu-left">
+          
+          
+            
+            <li><a href="/sats/" class="landing-page-item">Introduction</a></li>
+            
+          
+            
+            <li><a href="/sats/orbits.html" class="">Orbits &amp; Ephemerides</a></li>
+            
+          
+            
+          
+            
+            <li><a href="/sats/phys_par/" class="">Physical Parameters</a></li>
+            
+          
+            
+            <li><a href="/tools/gravity.html#/outerplanets" class="">Gravity Fields</a></li>
+            
+          
+            
+            <li><a href="/sats/obs_data.html" class="">Observational Data</a></li>
+            
+          
+            
+            <li><a href="/sats/discovery.html" class="">Discovery Circumstances</a></li>
+            
+          
+          </ul>
+        </li>
+        
+      
+      <!--DEBUG: join=Small Bodies<br/>  rec=Small Bodies-->
+        
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle"
+          data-toggle="dropdown">Small Bodies<br/>&nbsp;<span class="caret"></span></a>
+          
+          <ul class="dropdown-menu dropdown-menu-left">
+          
+          
+            
+            <li><a href="/sb/" class="landing-page-item">Introduction</a></li>
+            
+          
+            
+            <li><a href="/sb/orbits.html" class="">Orbits &amp; Ephemerides</a></li>
+            
+          
+            
+          
+            
+            <li><a href="/tools/sbdb_lookup.html" class="">Database Lookup</a></li>
+            
+          
+            
+            <li><a href="/tools/sbdb_query.html" class="">Database Query</a></li>
+            
+          
+            
+            <li><a href="/tools/mdesign.html" class="">Mission Design</a></li>
+            
+          
+            
+            <li><a href="/tools/sb_ident.html" class="">Identification</a></li>
+            
+          
+            
+            <li><a href="/tools/sbwobs.html" class="">What&apos;s Observable?</a></li>
+            
+          
+            
+            <li><a href="/sb/meteor_streams.html" class="">Meteor Streams</a></li>
+            
+          
+            
+            <li><a href="/sb/targets.html" class="">Mission Targets</a></li>
+            
+          
+            
+            <li><a href="/sb/sats.html" class="">Satellites</a></li>
+            
+          
+            
+            <li><a href="/sb/radar.html" class="">Radar Astrometry</a></li>
+            
+          
+            
+            <li><a href="/diagrams/" class="">Diagrams and Charts</a></li>
+            
+          
+            
+            <li><a href="/tools/gravity.html" class="">Gravity Fields</a></li>
+            
+          
+            
+            <li><a href="/sb/great_comets.html" class="">Great Comets</a></li>
+            
+          
+            
+            <li><a href="/sb/neos.html" class="">Near-Earth Objects</a></li>
+            
+          
+            
+          
+            
+          
+          </ul>
+        </li>
+        
+      
+      <!--DEBUG: join=Tools<br/>  rec=Tools-->
+        
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle"
+          data-toggle="dropdown">Tools<br/>&nbsp;<span class="caret"></span></a>
+          
+          <ul class="dropdown-menu">
+          
+          
+            
+            <li><a href="/tools/" class="landing-page-item">Description of Tools</a></li>
+            
+          
+            
+            <li><a href="/horizons/" class="">Horizons System</a></li>
+            
+          
+            
+            <li><a href="/ephem.html" class="">Download Ephemerides</a></li>
+            
+          
+            
+            <li><a href="/tools/sbdb_lookup.html" class="">Small-Body Database Lookup</a></li>
+            
+          
+            
+            <li><a href="/tools/sbdb_query.html" class="">Small-Body Database Query</a></li>
+            
+          
+            
+            <li><a href="/tools/mdesign.html" class="">Small-Body Mission Design</a></li>
+            
+          
+            
+            <li><a href="/tools/sb_ident.html" class="">Small-Body Identification</a></li>
+            
+          
+            
+            <li><a href="/tools/sbwobs.html" class="">Small-Body Observability</a></li>
+            
+          
+            
+            <li><a href="/tools/orbit_viewer.html" class="">Orbit Viewer</a></li>
+            
+          
+            
+            <li><a href="/tools/gravity.html" class="">Gravity Field Visualization</a></li>
+            
+          
+            
+            <li><a href="/tools/jdc/" class="">JD Date/Time Converter</a></li>
+            
+          
+            
+            <li><a href="/api.html" class="">APIs</a></li>
+            
+          
+          </ul>
+        </li>
+        
+      
+      <!--DEBUG: join=Extras<br/>  rec=Extras-->
+        
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle"
+          data-toggle="dropdown">Extras<br/>&nbsp;<span class="caret"></span></a>
+          
+          <ul class="dropdown-menu">
+          
+          
+            
+            <li><a href="/extras.html" class="landing-page-item">Description of Extras</a></li>
+            
+          
+            
+            <li><a href="/astro_par.html" class="">Astrodynamic Parameters</a></li>
+            
+          
+            
+            <li><a href="/diagrams/" class="">Diagrams and Charts</a></li>
+            
+          
+            
+            <li><a href="/obs_data.html" class="">Observational Data</a></li>
+            
+          
+            
+            <li><a href="/tools/periodic_orbits.html" class="">Three-Body Periodic Orbits</a></li>
+            
+          
+            
+            <li><a href="/tools/orbit_diagram.html" class="">Custom Orbit Visualization</a></li>
+            
+          
+            
+            <li><a href="/api.html" class="">APIs</a></li>
+            
+          
+            
+            <li><a href="/doc/" class="">Technical Documents</a></li>
+            
+          
+            
+            <li><a href="/discovery.html" class="">Discovery Circumstances</a></li>
+            
+          
+            
+            <li><a href="/announcements/" class="">Announcements</a></li>
+            
+          
+            
+            <li><a href="/email_list.html" class="">Email Lists</a></li>
+            
+          
+            
+            <li><a href="/glossary/" class="">Glossary</a></li>
+            
+          
+            
+            <li><a href="/links.html" class="">Related Sites</a></li>
+            
+          
+            
+            <li><a href="/faq.html" class="">FAQ</a></li>
+            
+          
+            
+            <li><a href="/sitemap.html" class="">Sitemap</a></li>
+            
+          
+            
+            <li><a href="/contact/" class="">Contact Us</a></li>
+            
+          
+          </ul>
+        </li>
+        
+      
+      </ul>
+    </div>
+
+  </div>
+
+</nav>
+<!-- End of navigation bar -->
+
+<!-- Breadcrumbs -->
+
+<ol id="breadcrumb" class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/planets/">Planets</a></li>
+  
+  
+  <li class="active">Approximate Positions of the Planets</li>
+  
+</ol>
+
+<!-- End of Breadcrumbs -->
+
+
+<div id="site-notice" role="alert"
+  class="alert alert-warning alert-dismissible no-bottom-margin hidden">
+  <button type="button" id="site-notice-close" class="close hidden"
+    aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+  <span class="site-notice">We are looking for an <a href="https://www.jpl.jobs/job/R3626/Software-Engineer-III-for-Small-body-Ephemeris-Development">experienced IT professional</a> interested in supporting our mission of providing high quality orbital data for solar-system objects.</span>
+  <br/>
+  <span class="no-wrap site-notice-date">Issued: 2023-02-03</span>
+</div>
+
+
+
+<div class="fixed-content-margin"></div>
+
+</div>
+
+
+<!-- page content: begin -->
+<div id="main_content" tabindex="-1" class="container-fluid hide-tabindex"> <!-- begin main container -->
+
+  <!-- check for JavaScript -->
+  <noscript>
+    <div class="alert alert-danger">
+<h4>Please enable JavaScript for this website.</h4>
+
+<p>
+This website makes extensive use of JavaScript.
+The top menus will not function without it
+and most tools will also not work.
+</p>
+
+<p>
+If you do not know how to enable JavaScript in your web browser,
+you should be able find instructions by searching the web for
+"enable javascript in my browser" (or similar).
+</p>
+
+    </div>
+  </noscript>
+
+  
+
+<h1 class="no-top-margin">Approximate Positions of the Planets</h1>
+
+
+
+
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Lower accuracy formulae for planetary positions have a number of 
+important applications when one doesn’t need the full accuracy of an 
+integrated ephemeris.  They are often used in observation scheduling,
+telescope pointing, and prediction of certain phenomena as well as in
+the planning and design of spacecraft missions.</p>
+
+<p>Approximate positions of the planets may be found by using
+Keplerian formulae with their associated elements and rates.  Such
+elements are not intended to represent any sort of mean; they are
+simply the result of being adjusted for a best fit.  As such, it must
+be noted that the elements are not valid outside the given
+time-interval over which they were fit.</p>
+
+<p>High precision ephemerides for the planets are available via the <a href="/horizons/">Horizons system</a>.</p>
+
+<h3 id="accuracy">Accuracy</h3>
+
+<p>The table below lists nominal errors in astrometric coordinates (<code>RA</code> and <code>Dec.</code>,
+shown in arcseconds) and distance (<code>r</code>, shown in km)
+using this approximation of planetary positions.</p>
+
+
+
+<table class="planet-approx-pos-errors">
+  <thead>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="3">1800 AD &mdash; 2050 AD</td>
+      <td colspan="3">3000 BC &mdash; 3000 AD</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <th>RA<br/>(arcsec)</th>
+      <th>Dec.<br/>(arcsec)</th>
+      <th>r<br/>(1000 km)</th>
+      <th>RA<br/>(arcsec)</th>
+      <th>Dec.<br/>(arcsec)</th>
+      <th>r<br/>(1000 km)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Mercury</th>
+      <td>15</td><td>1</td><td>1</td>
+      <td>20</td><td>15</td><td>1</td>
+    </tr>
+    <tr>
+      <th>Venus</th>
+      <td>20</td><td>1</td><td>4</td>
+      <td>40</td><td>30</td><td>8</td>
+    </tr>
+    <tr>
+      <th>EM Bary<sup>&dagger;</sup></th>
+      <td>20</td><td>8</td><td>6</td>
+      <td>40</td><td>15</td><td>15</td>
+    </tr>
+    <tr>
+      <th>Mars</th>
+      <td>40</td><td>2</td><td>25</td>
+      <td>100</td><td>40</td><td>30</td>
+    </tr>
+    <tr>
+      <th>Jupiter</th>
+      <td>400</td><td>10</td><td>600</td>
+      <td>600</td><td>100</td><td>1000</td>
+    </tr>
+    <tr>
+      <th>Saturn</th>
+      <td>600</td><td>25</td><td>1500</td>
+      <td>1000</td><td>100</td><td>4000</td>
+    </tr>
+    <tr>
+      <th>Uranus</th>
+      <td>50</td><td> 2</td><td>1000</td>
+      <td>2000</td><td> 30</td><td>8000</td>
+    </tr>
+    <tr>
+      <th>Neptune</th>
+      <td>10</td><td> 1</td><td> 200</td>
+      <td>400</td><td> 15</td><td>4000</td>
+    </tr>
+  </tbody>
+</table>
+<p><b><sup>&dagger;</sup> EM Bary</b> = Earth/Moon Barycenter</p>
+
+<h3>Formulae for using the Keplerian elements</h3>
+
+<p>Keplerian elements given in the <a href="#tables">tables below</a> are</p>
+<table class="planet-approx-pos-def-table" role="presenation">
+  <tbody>
+    <tr>
+      <td>\( a_o, \dot a \)</td>
+      <td>semi-major axis [au, au/century]</td>
+    </tr>
+    <tr>
+      <td>\( e_o, \dot e \)</td>
+      <td>eccentricity</td>
+    </tr>
+    <tr>
+      <td>\( I_o, \dot I \)</td>
+      <td>inclination [degrees, degrees/century]</td>
+    </tr>
+    <tr>
+      <td>\( L_o, \dot L \)</td>
+      <td>mean longitude [degrees, degrees/century]</td>
+    </tr>
+    <tr>
+      <td>\( \varpi_o, \dot \varpi \)</td>
+      <td>longitude of perihelion [degrees, degrees/century]</td>
+    </tr>
+    <tr>
+      <td>\( \Omega_o, \dot \Omega \)</td>
+      <td>longitude of the ascending node [degrees, degrees/century]</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+In order to obtain the coordinates of one of the planets at a
+given Julian ephemeris date, T\(_{\rm eph}\), 
+</p>
+<ol class="planet-approx-pos-list">
+  <li>
+  Compute the value of each of that planet's six elements:
+  \( a = a_o + \dot a {\rm T} \), etc., where T, the number of centuries past J2000.0,
+  is <span class="text-nowrap">T = (T\(_{\rm eph}-2451545.0)/36525\)</span>.
+  </li>
+  <li>
+  Compute the argument of perihelion, \(\omega\), and the mean anomaly, \(M\):<br/>
+  \[
+  \omega = \varpi - \Omega \ \ ; \ \ 
+  M = L \ - \ \varpi  \ + \ b {\rm T}^2 \ + \ c \cos(f {\rm T}) \ + \ s \sin(f {\rm T})
+  \]
+  </li>
+  <li>
+  Modulus the mean anomaly so that \(-180^{\rm o} \leq M \leq +180^{\rm o}\)
+  and then obtain the eccentric anomaly, \(E\), from the
+  solution of Kepler's equation (see below):
+  \[ M \ = \ E - e^{\ast} \sin E \]
+  where \( e^{\ast} \ = \ 180/\pi \ e \ = \ 57.29578 \ e \).
+  </li>
+  <li>
+  Compute the planet's heliocentric coordinates in its orbital plane, \({\bf r'}\),
+  with the \(x'\)-axis aligned from the focus to the perihelion:
+  \[ x' = a ( \cos E - e )  \quad ; \quad  y' = a
+  \sqrt{1 - e^2}\ \sin E  \quad ; \quad  z'=0. \]
+  </li>
+  <li>
+  Compute the coordinates, \({\bf r}_{ecl}\), in the J2000 ecliptic plane,
+  with the x-axis aligned toward the equinox:
+  \[ {\bf r}_{ecl} \ = {\cal M} {\bf r'} \ \equiv \ {\cal R}_z (-\Omega)
+  {\cal R}_x (-I) {\cal R}_z (-\omega) {\bf r'} \]
+  so that
+  \[
+  \matrix{
+    x_{ecl} & = & \ (\cos \omega \cos \Omega - \sin \omega \sin \Omega  \cos I) & x'
+      & + \ (- \sin \omega \cos \Omega - \cos \omega \sin \Omega \cos I) & y' \cr
+    y_{ecl} & = & \ (\cos \omega \sin \Omega + \sin \omega \cos \Omega  \cos I) & x'
+      & + \ (- \sin \omega \sin \Omega + \cos \omega \cos \Omega \cos I) & y' \cr
+    z_{ecl} & = & \ ( \sin \omega \sin I) & x' & + \ (\cos \omega \sin I)  & y' \cr
+  }
+  \]
+  </li>
+  <li>
+  If desired, obtain the equatorial coordinates in the "ICRF" or "J2000 frame",
+  \({\bf r_{eq}}\):
+  \[
+  \matrix{
+    x_{eq} & = &  x_{ecl} \cr
+    y_{eq} & = & & + \ \cos \varepsilon & y_{ecl} & \ - \ \sin \varepsilon & z_{ecl} \cr
+    z_{eq} & = & & + \ \sin \varepsilon & y_{ecl} & \ + \ \cos \varepsilon & z_{ecl} \cr
+  }
+  \]
+  where the obliquity at J2000 is \( \varepsilon = 23\rlap .{^{\rm o} 43928} \).
+  </li>
+</ol>
+
+
+<h4>Solution of Kepler's Equation</h4>
+<p>
+\[ M \ = \ E - e^{\ast} \sin E \]
+
+Given the mean anomaly, \(M\), and the eccentricity, \(e^{\ast}\), both in degrees, start with
+\[ E_0 = M - e^{\ast} \sin M \]
+
+and iterate the following three equations, with \(n=0,1,2,...\), until \(|\Delta E| \leq tol\):
+
+\[ \Delta M = M - (E_n - e^{\ast} \sin E_n) \ \ ; \ \ \Delta E = \Delta M / (1
+- e \cos E_n) \ \ ; \ \ E_{n+1} = E_n + \Delta E . \]
+
+For the approximate formulae in this present context, \(tol = 10^{-6}\) degrees is sufficient.
+</p>
+
+
+<a id="tables" class="anchor"></a>
+<h3>Keplerian Elements and Rates</h3>
+
+<h4>Table 1</h4>
+<p>
+Keplerian elements and their rates, with respect to the mean ecliptic
+and equinox of J2000, valid for the time-interval 1800&nbsp;AD - 2050&nbsp;AD.
+</p>
+<pre> 
+               a              e               I                L            long.peri.      long.node.
+           au, au/Cy     rad, rad/Cy     deg, deg/Cy      deg, deg/Cy      deg, deg/Cy     deg, deg/Cy
+-----------------------------------------------------------------------------------------------------------
+Mercury   0.38709927      0.20563593      7.00497902      252.25032350     77.45779628     48.33076593
+          0.00000037      0.00001906     -0.00594749   149472.67411175      0.16047689     -0.12534081
+Venus     0.72333566      0.00677672      3.39467605      181.97909950    131.60246718     76.67984255
+          0.00000390     -0.00004107     -0.00078890    58517.81538729      0.00268329     -0.27769418
+EM Bary   1.00000261      0.01671123     -0.00001531      100.46457166    102.93768193      0.0
+          0.00000562     -0.00004392     -0.01294668    35999.37244981      0.32327364      0.0
+Mars      1.52371034      0.09339410      1.84969142       -4.55343205    -23.94362959     49.55953891
+          0.00001847      0.00007882     -0.00813131    19140.30268499      0.44441088     -0.29257343
+Jupiter   5.20288700      0.04838624      1.30439695       34.39644051     14.72847983    100.47390909
+         -0.00011607     -0.00013253     -0.00183714     3034.74612775      0.21252668      0.20469106
+Saturn    9.53667594      0.05386179      2.48599187       49.95424423     92.59887831    113.66242448
+         -0.00125060     -0.00050991      0.00193609     1222.49362201     -0.41897216     -0.28867794
+Uranus   19.18916464      0.04725744      0.77263783      313.23810451    170.95427630     74.01692503
+         -0.00196176     -0.00004397     -0.00242939      428.48202785      0.40805281      0.04240589
+Neptune  30.06992276      0.00859048      1.77004347      -55.12002969     44.96476227    131.78422574
+          0.00026291      0.00005105      0.00035372      218.45945325     -0.32241464     -0.00508664
+------------------------------------------------------------------------------------------------------
+EM Bary = Earth/Moon Barycenter
+</pre>
+
+<h4>Table 2a</h4>
+<p>
+Keplerian elements and their rates, with respect to the mean ecliptic and equinox of J2000,
+valid for the time-interval 3000&nbsp;BC -- 3000&nbsp;AD.
+NOTE: the computation of M for Jupiter through
+Neptune *must* be augmented by the additional terms given in Table 2b (below).
+</p>
+<pre>
+               a              e               I                L            long.peri.      long.node.
+           au, au/Cy     rad, rad/Cy     deg, deg/Cy      deg, deg/Cy      deg, deg/Cy     deg, deg/Cy
+------------------------------------------------------------------------------------------------------
+Mercury   0.38709843      0.20563661      7.00559432      252.25166724     77.45771895     48.33961819
+          0.00000000      0.00002123     -0.00590158   149472.67486623      0.15940013     -0.12214182
+Venus     0.72332102      0.00676399      3.39777545      181.97970850    131.76755713     76.67261496
+         -0.00000026     -0.00005107      0.00043494    58517.81560260      0.05679648     -0.27274174
+EM Bary   1.00000018      0.01673163     -0.00054346      100.46691572    102.93005885     -5.11260389
+         -0.00000003     -0.00003661     -0.01337178    35999.37306329      0.31795260     -0.24123856
+Mars      1.52371243      0.09336511      1.85181869       -4.56813164    -23.91744784     49.71320984
+          0.00000097      0.00009149     -0.00724757    19140.29934243      0.45223625     -0.26852431
+Jupiter   5.20248019      0.04853590      1.29861416       34.33479152     14.27495244    100.29282654
+         -0.00002864      0.00018026     -0.00322699     3034.90371757      0.18199196      0.13024619
+Saturn    9.54149883      0.05550825      2.49424102       50.07571329     92.86136063    113.63998702
+         -0.00003065     -0.00032044      0.00451969     1222.11494724      0.54179478     -0.25015002
+Uranus   19.18797948      0.04685740      0.77298127      314.20276625    172.43404441     73.96250215
+         -0.00020455     -0.00001550     -0.00180155      428.49512595      0.09266985      0.05739699
+Neptune  30.06952752      0.00895439      1.77005520      304.22289287     46.68158724    131.78635853
+          0.00006447      0.00000818      0.00022400      218.46515314      0.01009938     -0.00606302
+------------------------------------------------------------------------------------------------------
+EM Bary = Earth/Moon Barycenter
+</pre>
+
+<h4>Table 2b</h4>
+<p>
+Additional terms which must be added to the computation of M for Jupiter through Neptune,
+3000&nbsp;BC to 3000&nbsp;AD, as described in the related document.
+</p>
+<pre>
+                b             c             s            f 
+---------------------------------------------------------------
+Jupiter   -0.00012452    0.06064060   -0.35635438   38.35125000
+Saturn     0.00025899   -0.13434469    0.87320147   38.35125000
+Uranus     0.00058331   -0.97731848    0.17689245    7.67025000
+Neptune   -0.00041348    0.68346318   -0.10162547    7.67025000
+---------------------------------------------------------------
+</pre>
+
+
+<h3 id="reference">Reference</h3>
+
+<p>This content is from an article written by E.M. Standish in 1992.
+It has been published here with permission from the author and
+reformatted for optimal web-based presentation.
+The former planet Pluto has also been removed.</p>
+
+
+
+<!-- end of page content -->
+
+
+
+
+
+<div id="footer" class="container-fluid footer">
+  <div class="row">
+    <div class="col-sm-5 col-xs-12">
+      <img class="ssd-logo" src="/images/ssd_logo.png" alt="SSD Logo" />
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <div class="link-inv">
+        <a href="/sitemap.html"><i class="fa-fw fa fa-list-alt"></i> Site Map</a>
+      </div>
+      <div class="link-inv">
+        <a href="https://www.jpl.nasa.gov/caltechjpl-privacy-policies-and-important-notices"><i class="fa-fw fa fa-user-secret"></i> Privacy</a>
+      </div>
+      <div class="link-inv">
+        <a href="https://www.jpl.nasa.gov/jpl-image-use-policy"><i class="fa-fw fa fa-picture-o"></i> Image Policy</a>
+      </div>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      <div class=" link-inv">
+        <a href="/contact/"><i class="fa-fw fa fa-envelope"></i> Contact Us</a>
+      </div>
+      <div class="text-smaller">
+        <span class="footer-label text-nowrap">Site Manager:</span>
+        <span class="text-nowrap">Ryan Park</span>
+      </div>
+      <div class="text-smaller2">
+        <span class="footer-label text-nowrap">Site Design:</span>
+        <span class="text-nowrap">Alan B. Chamberlin</span>
+        
+      </div>
+      <div class="text-smaller2">
+        <span class="footer-label text-nowrap">URS Clearance:</span>
+        <span class="text-nowrap">CL#21-4165</span>
+      </div>
+    </div>
+  </div>
+  
+    
+  <script id="_fed_an_ua_tag" type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA&subagency=JPL&sdor=false"></script>
+    
+  
+</div>
+
+
+
+</div> <!-- end of main container -->
+
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/sprintf.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/dataTables.bootstrap.min.js"></script>
+<script src="/js/dataTables.responsive.min.js"></script>
+<script src="/js/dataTables.conditionalPaging.js"></script>
+<script src="/js/dataTables.select.min.js"></script>
+<script src="/tools/common/js/vendor/dataTables.select.min.js"></script>
+
+<script src="/js/responsive.bootstrap.min.js"></script>
+
+
+<script src="/js/angular.min.js"></script>
+<script src="/js/angular-sanitize.min.js"></script>
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+<script>
+$(function() {
+  $("a[class='anchor-modal']").click( function(e) {
+    e.preventDefault();
+    var href = $(this).attr('href');
+    $(href).modal('toggle');
+  });
+});
+</script>
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </body>
+</html>

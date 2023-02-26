@@ -1,0 +1,22 @@
+Small Solar System Worlds Fact Sheet
+
+Information on the Jupiter's satellites Callisto, Ganymede, Europa, and Io and comparison with other selected solar system bodies. 
+
+ 
+                              CALLISTO    GANYMEDE    EUROPA       IO           MOON      MERCURY        PLUTO       TITAN       TRITON       CERES        EARTH 
+Diameter (km)                   4821        5262       3122       3643          3475       4879          2374        5150         2705         950        12,756
+Diameter (Earth = 1)             0.378       0.413      0.245      0.286         0.272      0.382         0.186       0.404        0.212       0.074         1.000
+Mass (10^21kg)                   107.6       148.2       48.0       89.3          73.5      330.1          13.0       134.6         21.5       0.94         5970
+Density (kg/m^3)                1830        1940       3010       3530          3340       5427          1860        1881         2050        2600          5515
+Gravity (m/s^2)                  1.24        1.43       1.31       1.80          1.6        3.7           0.6         1.35         0.78        0.26          9.8
+Escape Velocity (km/s)           2.4         2.7        2.0        2.6           2.4        4.3           1.2         2.6          1.5         0.5          11.2
+Rotation Period (hours)          400.5       171.7       85.2       42.5         655.7     1407.6        -153.3       382.7       -141.0       9.1          23.9
+Orbital Distance (10^3 km)      1883        1070        671        422           384      57,900      5,906,000      1222          355       414,000      149,600
+Periapse (10^3 km)              1870        1068        664        420           363      46,000      4,437,000      1186          355       381,000      147,100
+Apoapse (10^3 km)               1896        1072        678        424           406      69,800      7,376,000      1258          355       447,000      152,100
+Orbital Period (days)           16.7         7.2        3.6        1.8           27.3        88.0        90,560      15.9          5.9        1680         365.2
+Orbital Velocity (km/s)          8.2        10.9       13.7       17.3            1.0        47.9         4.7         5.6          4.4        17.9          29.8
+Orbital Inclination (deg.)       0.19        0.18       0.47       0.04           5.1         7.0        17.2         0.33         157.3      10.6           0.0
+Orbital Eccentricity             0.007       0.001     0.009      0.004         0.055       0.205       0.249       0.029        0.000       0.079         0.017
+Mean Temperature (C)            -155        -160       -170       -155           -20         167         -225        -180         -215        -105            15
+Global Magnetic Field?            No         Yes         No      Possible         No         Yes        Unknown      Unknown      Unknown     Unknown        Yes
