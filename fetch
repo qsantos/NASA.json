@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -e
+mkdir -p "data/"
+cd "data/"
+
+# tables
+wget "https://ssd.jpl.nasa.gov/planets/phys_par.html" -O "planet_phys_par.html"
+wget "https://ssd.jpl.nasa.gov/planets/approx_pos.html" -O "approx_pos.html"
+wget "https://ssd.jpl.nasa.gov/sats/phys_par/" -O "sat_phys_par.html"
+wget "https://ssd.jpl.nasa.gov/sats/elem/" -O "sat_elem.html"
+
+# factsheets
+wget -km -np -nH --cut-dirs 1 "https://nssdc.gsfc.nasa.gov/planetary/factsheet/"
+rm -f robots.txt
+
+# Scott S. Sheppard's personal website
+for primary in jupiter saturn uranus neptune pluto
+do
+    wget "https://sites.google.com/carnegiescience.edu/sheppard/moons/${primary}moons" -O "${primary}moons"
+done
+
+# JPL Small-Body Database
+mkdir -p "sbdb/"
+cd "sbdb/"
+for p in Ceres Orcus Pluto Haumea Quaoar Makemake Gonggong Eris Sedna
+do
+    wget "https://ssd-api.jpl.nasa.gov/sbdb.api?phys-par=1&sstr=$p" -O "$p.json"
+done
+
